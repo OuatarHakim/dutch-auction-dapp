@@ -14,7 +14,7 @@ Ce TP est le prolongement du premier et consiste à créer une application déce
 
 Il doit être possible de se connecter à l'aide de son portefeuille MetaMask. Vous pouvez utiliser la SDK de [MetaMask](https://docs.metamask.io/wallet/how-to/connect/set-up-sdk/).
 
-Les données du portefeuille telles que la clé publique et le solde en ETH doivent être visibles depuis l'application.
+Les données du portefeuille telles que l'adresse publique et le solde en ETH doivent être visibles depuis l'application.
 
 ### Enchères
 
