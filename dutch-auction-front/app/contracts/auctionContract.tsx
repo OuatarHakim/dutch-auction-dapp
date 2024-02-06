@@ -211,9 +211,8 @@ const getContract = (provider: ethers.ContractRunner | null | undefined) => {
   return new ethers.Contract(contractAddress, abi, provider);
 };
 
-// Fonctions pour interagir avec le contrat
 
-// Exemple : Fonction pour placer une enchère
+// Fonction pour placer une enchère
 const placeBid = async (provider: ethers.ContractRunner | null | undefined, lotIndex: any | ethers.Overrides, bidAmount: any) => {
   try {
     const contract = getContract(provider);
