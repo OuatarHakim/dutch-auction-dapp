@@ -7,7 +7,7 @@ import { ethers } from 'ethers';
 import abi from '../abi.json';
 import styles from './enchere.module.css';
 
-const contractAddress = "0x266426FaEa98dba9cbCA6Ebe6B357f5b4B2C237E";
+const contractAddress = "";
 
 const Encheres = () => {
   const [userAddress, setUserAddress] = useState<string>('');

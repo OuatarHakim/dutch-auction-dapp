@@ -15,7 +15,7 @@ const Homepage = () => {
   const [auctionsRendered, setAuctionsRender] = useState<any[] | null>([]);
   const [articles, setArticles] = useState<any[]>([]);
   const [ au, setAu] = useState<any[]>([(<><div>Hola</div></>)]);
-  const contractAddress =  "0x266426FaEa98dba9cbCA6Ebe6B357f5b4B2C237E";
+  const contractAddress =  "";
 
   const connectMetaMask = async () => {
     try {
