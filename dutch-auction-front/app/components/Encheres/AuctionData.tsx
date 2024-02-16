@@ -58,4 +58,7 @@ const AuctionForm: React.FC<AuctionFormProps> = ({ onCreateAuction }) => {
                 <div className="mb-4">
                     <label htmlFor="duration" className="block text-gray-700 font-bold mb-2">Duration (minutes)</label>
                     <input type="number" id="duration" name="duration" value={auctionData.duration} onChange={handleChange} placeholder="Enter Duration" className="border border-gray-300 rounded-md w-full p-2" />
-               
+               </div>
+               </form>
+               </div>
+    )}
