@@ -22,9 +22,7 @@ const Navbar: React.FC = () => {
                 <Link href="/encheres" >
                     <span className="ml-4 text-white hover:text-gray-400">Enchères</span>
                 </Link>
-                <Link href="/profile">
-                    <span className="ml-4 text-white hover:text-gray-400">Profil</span>
-                </Link>
+                
                 {!isLoggedIn ? (
                     <Link href="/login">
                         <span className="ml-4 text-white hover:text-gray-400 cursor-pointer">Connexion</span>

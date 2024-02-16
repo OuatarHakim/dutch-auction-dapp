@@ -22,7 +22,6 @@ const Layout = ({ children, dehydratedState }: LayoutProps) => {
       <Hydrate state={dehydratedState}>
         <Navbar />
         <div>{children}</div>
-        <Footer />
       </Hydrate>
     </QueryClientProvider>
     </body>
