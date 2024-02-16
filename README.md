@@ -2,7 +2,7 @@
 
 |   Nom   | Prénom |
 |---------|--------|
-|   Doe   |  Jane  |
+|   OUATAR   |  Hakim  |
 
 Le TP est à réaliser individuellement.
 
@@ -43,4 +43,47 @@ Pour créer une application NextJS, utilisez la commande suivante :
 npx create-next-app@latest
 ```
 
-A vous de jouer !
+# Application d'enchères hollandaises décentralisée
+
+## Introduction
+
+Ce rapport présente l'application d'enchères hollandaises décentralisée (dApp) dans le cadre d'un projet. L'objectif de cette application est de permettre aux utilisateurs de participer à des enchères décentralisées en utilisant MetaMask comme portefeuille et en interagissant avec des contrats intelligents sur la blockchain Ethereum.
+
+## Fonctionnalités
+
+L'application offre les fonctionnalités suivantes :
+
+### 1. Authentification et Profil
+
+L'authentification dans l'application se fait via MetaMask. Les utilisateurs peuvent se connecter à leur compte MetaMask, ce qui leur permet d'accéder à leur compte et de visualiser des informations telles que leur adresse publique et leur solde en ETH directement depuis l'application.
+![](images/connexion.png)
+
+### 2. Enchères
+
+#### 2.1 Liste des Enchères Disponibles
+
+Les utilisateurs peuvent visualiser toutes les enchères disponibles sur la plateforme, avec des détails sur chaque enchère telles que le nom, la description et les articles inclus.
+
+#### 2.2 Création d'une Enchère
+
+Les utilisateurs peuvent créer de nouvelles enchères en ajoutant des articles à l'enchère et en spécifiant des détails tels que le nom, la description et le prix de réserve. Une fois que tous les détails sont renseignés, l'utilisateur peut finaliser la création de l'enchère en appuyant sur le bouton "Créer".
+![](images/creation.png)
+
+#### Enchère crée : 
+![](images/enchercrie.png)
+
+#### 2.3 Participation à une Enchère
+
+Les utilisateurs peuvent participer à une ou plusieurs enchères en enchérissant sur celles qui les intéressent. Ils peuvent spécifier le montant qu'ils sont prêts à offrir et soumettre leur offre. Lorsque la durée de l'enchère expire, celle-ci est automatiquement clôturée.
+
+#### 2.4 Suivi des Enchères Gagnées et Perdues
+
+Les utilisateurs peuvent suivre les enchères qu'ils ont remportées et celles qu'ils ont perdues. Les enchères gagnées sont affichées dans la section "Enchères Gagnées" tandis que les enchères perdues sont affichées dans la section "Enchères Perdues". Cela permet aux utilisateurs de garder une trace de leurs transactions passées.
+
+## Utilisation
+
+Pour utiliser l'application, les utilisateurs doivent installer MetaMask et disposer d'un portefeuille Ethereum avec des fonds suffisants pour participer aux enchères. Ils peuvent ensuite se connecter à l'application à l'aide de leur compte MetaMask et commencer à participer aux enchères disponibles.
+
+## Conclusion
+
+L'application d'enchères hollandaises décentralisée offre une plateforme transparente et sécurisée pour les utilisateurs souhaitant participer à des enchères décentralisées sur la blockchain Ethereum. Avec des fonctionnalités telles que l'authentification via MetaMask, la création d'enchères et le suivi des enchères gagnées et perdues, l'application offre une expérience utilisateur conviviale pour les amateurs d'enchères en ligne.
