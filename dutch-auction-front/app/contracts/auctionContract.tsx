@@ -2,237 +2,10 @@
 import { ethers } from 'ethers';
 
 // Adresse du contrat d'enchères
-const contractAddress = '0x20f698f41230DE20cfB08b0eCb4f2bCC2F897f8b';
+const contractAddress = '0x4abd38be16cc29DF1B44Ec6f05013AA6842e675D';
 
-// ABI (Interface binaire du contrat)
-const abi = [
-  {
-    "inputs": [],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "articleIndex",
-        "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "bidder",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "BidPlaced",
-    "type": "event"
-  },
-  {
-    "inputs": [],
-    "name": "AUCTION_DURATION",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
-  },
-  {
-    "inputs": [],
-    "name": "PRICE_DECREMENT",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
-  },
-  {
-    "inputs": [],
-    "name": "RESERVE_PRICE",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
-  },
-  {
-    "inputs": [],
-    "name": "STARTING_PRICE",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "articles",
-    "outputs": [
-      {
-        "internalType": "string",
-        "name": "name",
-        "type": "string"
-      },
-      {
-        "internalType": "uint256",
-        "name": "currentPrice",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "duration",
-        "type": "uint256"
-      },
-      {
-        "internalType": "address",
-        "name": "winningBidder",
-        "type": "address"
-      },
-      {
-        "internalType": "bool",
-        "name": "closed",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
-  },
-  {
-    "inputs": [],
-    "name": "auctionStartTime",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
-  },
-  {
-    "inputs": [],
-    "name": "auctioneer",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
-  },
-  {
-    "inputs": [],
-    "name": "currentArticleIndex",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
-  },
-  {
-    "inputs": [],
-    "name": "getCurrentPrice",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "articleIndex",
-        "type": "uint256"
-      }
-    ],
-    "name": "placeBid",
-    "outputs": [],
-    "stateMutability": "payable",
-    "type": "function",
-    "payable": true
-  },
-  {
-    "inputs": [],
-    "name": "moveToNextArticle",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "string",
-        "name": "_name",
-        "type": "string"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_startingPrice",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_duration",
-        "type": "uint256"
-      }
-    ],
-    "name": "createAuction",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  }
-  ];
+import abi from '../abi.json';
+
 
 // Obtenir une instance du contrat
 const getContract = (provider: ethers.ContractRunner | null | undefined) => {
@@ -322,18 +95,21 @@ export { createAuction };
 const createAuction = async (name: string, startingPrice:any, duration: any) => {
 
   try {
+    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = await provider.getSigner();
     if(provider) {
       try{
         let signer = provider.getSigner();
         const contract = new ethers.Contract(contractAddress ,abi,provider);
-        
         const signedTransaction = await signer.sendTransaction({
           to:contract.address,
           value:0,
           data:contract.interface.encodeFunctionData("createAuction", [name, ethers.utils.parseEther(startingPrice), ethers.BigNumber.from(duration)]),
       })
+      console.log("hhh")
+
           await signedTransaction.wait();
       }catch(err){
         console.log(err);
