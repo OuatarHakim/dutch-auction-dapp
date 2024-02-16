@@ -7,10 +7,11 @@ import ListEncheresPerdues from './EncheresPerdues';
 const Dashboard: React.FC = () => {
     return (
         <div className="dashboard">
-            <h1>Dashboard</h1>
+            <>
             <ListEncheresGagnantes />
             <ListEncheresActifs />
             <ListEncheresPerdues />
+            </>
         </div>
     );
 };
