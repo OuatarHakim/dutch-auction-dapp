@@ -1,34 +1,29 @@
-
-/* Container */
 .enchere-container {
     display: flex;
     justify-content: space-between;
+
   }
   
-  /* Column */
   .enchere-column {
     flex: 1;
     margin-right: 20px;
+    padding:10rem;
   }
   
-  /* Title */
   .enchere-title {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
   }
   
-  /* Article */
   .enchere-article {
     margin-bottom: 1rem;
   }
   
-  /* Article Name */
   .enchere-article-name {
     font-weight: bold;
   }
   
-  /* Article Status */
   .enchere-article-status {
     color: #555;
   }

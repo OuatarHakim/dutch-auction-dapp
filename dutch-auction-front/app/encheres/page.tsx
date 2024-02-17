@@ -1,17 +1,15 @@
-
 "use client"; 
 import React, { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import abi from '../abi.json';
-import style from './encheres.module.css';
-
-const contractAddress = "0xC5A8678608725c3636701b9FED244b2184ccF0E4";
+import "./encheres.module.css"
+const contractAddress = "0xB2707c96D812dea2374E20A02D8e7336137E59bc";
 declare global {
   interface Window {
       ethereum?: any; // Déclarez la propriété 'ethereum' comme optionnelle
   }
 }
-const Encheres = () => {
+const EncheresPage: React.FC = () =>{
   const [userAddress, setUserAddress] = useState<string>('');
   const [provider, setProvider] = useState<ethers.providers.Web3Provider | null>(null);
   const [auctionsWon, setAuctionsWon] = useState<any[]>([]);
@@ -71,26 +69,26 @@ const Encheres = () => {
   };
 
   return (
-    <div className={style.enchereContainer}>
-      <div className={style.enchereColumn}>
-        <h2 className={style.enchereTitle}>Enchères Gagnées</h2>
+    <div className="enchereContainer">
+      <div className="enchereColumn">
+        <h2 className="enchereTitle">Enchères Gagnées</h2>
         <div>
           {auctionsWon.map((article, index) => (
-            <div key={index} className={style.enchereArticle}>
-              <p className={style.enchereArticleName}>{article.name}</p>
-              <p className={style.enchereArticleStatus}>Acheté</p>
+            <div key={index} className="enchereArticle">
+              <p className="enchereArticleName">{article.name}</p>
+              <p className="enchereArticleStatus">Acheté</p>
             </div>
           ))}
         </div>
       </div>
 
-      <div className={style.enchereColumn}>
-        <h2 className={style.enchereTitle}>Enchères Perdues</h2>
+      <div className="enchereColumn">
+        <h2 className="enchereTitle">Enchères Perdues</h2>
         <div>
           {auctionsLost.map((article, index) => (
-            <div key={index} className={style.enchereArticle}>
-              <p className={style.enchereArticleName}>{article.name}</p>
-              <p className={style.enchereArticleStatus}>Non Acheté</p>
+            <div key={index} className="enchereArticle">
+              <p className="enchereArticleName">{article.name}</p>
+              <p className="enchereArticleStatus">Non Acheté</p>
             </div>
           ))}
         </div>
@@ -99,4 +97,4 @@ const Encheres = () => {
   );
 };
 
-export default Encheres;
+export default EncheresPage;

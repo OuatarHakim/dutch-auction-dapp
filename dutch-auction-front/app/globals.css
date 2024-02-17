@@ -143,3 +143,30 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
+.enchere-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.enchere-column {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.enchere-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.enchere-article {
+  margin-bottom: 1rem;
+}
+
+.enchere-article-name {
+  font-weight: bold;
+}
+
+.enchere-article-status {
+  color: #555;
+}

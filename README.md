@@ -83,6 +83,7 @@ Les utilisateurs peuvent participer à une ou plusieurs enchères en enchérissa
 
 Les utilisateurs peuvent suivre les enchères qu'ils ont remportées et celles qu'ils ont perdues. Les enchères gagnées sont affichées dans la section "Enchères Gagnées" tandis que les enchères perdues sont affichées dans la section "Enchères Perdues". Cela permet aux utilisateurs de garder une trace de leurs transactions passées.
 
+![](images/encheres.png)
 
 
 ## Utilisation

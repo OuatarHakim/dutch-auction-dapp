@@ -4,7 +4,6 @@
 import React, { ReactNode, useState } from 'react';
 import { DehydratedState, Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 import Navbar from './components/Utils/Navbar';
-import Footer from './components/Utils/Footer';
 import './globals.css'
 
 interface LayoutProps {
