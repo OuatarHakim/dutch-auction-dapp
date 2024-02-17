@@ -66,19 +66,24 @@ Les utilisateurs peuvent visualiser toutes les enchères disponibles sur la plat
 
 #### 2.2 Création d'une Enchère
 
-Les utilisateurs peuvent créer de nouvelles enchères en ajoutant des articles à l'enchère et en spécifiant des détails tels que le nom, la description et le prix de réserve. Une fois que tous les détails sont renseignés, l'utilisateur peut finaliser la création de l'enchère en appuyant sur le bouton "Créer".
-![](images/creation.png)
+Les utilisateurs peuvent créer de nouvelles enchères en ajoutant des articles à l'enchère et en spécifiant des détails tels que le nom, la description et le prix de réserve. Une fois que tous les détails sont renseignés, l'utilisateur peut finaliser la création de l'enchère en appuyant sur le bouton "Créer l'enchère".
+![](images/creation1.png)
 
 #### Enchère crée : 
-![](images/enchercrie.png)
+![](images/creation2.png)
 
 #### 2.3 Participation à une Enchère
 
 Les utilisateurs peuvent participer à une ou plusieurs enchères en enchérissant sur celles qui les intéressent. Ils peuvent spécifier le montant qu'ils sont prêts à offrir et soumettre leur offre. Lorsque la durée de l'enchère expire, celle-ci est automatiquement clôturée.
+#### Achat d'un article 
+![](images/achat1.png)
+
 
 #### 2.4 Suivi des Enchères Gagnées et Perdues
 
 Les utilisateurs peuvent suivre les enchères qu'ils ont remportées et celles qu'ils ont perdues. Les enchères gagnées sont affichées dans la section "Enchères Gagnées" tandis que les enchères perdues sont affichées dans la section "Enchères Perdues". Cela permet aux utilisateurs de garder une trace de leurs transactions passées.
+
+
 
 ## Utilisation
 

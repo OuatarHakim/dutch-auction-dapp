@@ -24,7 +24,7 @@ const LoginPage: React.FC = () => {
         try {
             if (window.ethereum) {
                 const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-                const account = accounts[0];
+                const account = accounts[3];
                 setUserAddress(account);
 
                 const ethProvider = new ethers.providers.Web3Provider(window.ethereum);

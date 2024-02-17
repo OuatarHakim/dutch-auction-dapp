@@ -1,14 +1,16 @@
 
 "use client"; 
-// encheres.tsx
-
 import React, { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
 import abi from '../abi.json';
-import styles from './enchere.module.css';
+import style from './encheres.module.css';
 
-const contractAddress = "";
-
+const contractAddress = "0xC5A8678608725c3636701b9FED244b2184ccF0E4";
+declare global {
+  interface Window {
+      ethereum?: any; // Déclarez la propriété 'ethereum' comme optionnelle
+  }
+}
 const Encheres = () => {
   const [userAddress, setUserAddress] = useState<string>('');
   const [provider, setProvider] = useState<ethers.providers.Web3Provider | null>(null);
@@ -69,26 +71,26 @@ const Encheres = () => {
   };
 
   return (
-    <div className={styles.enchereContainer}>
-      <div className={styles.enchereColumn}>
-        <h2 className={styles.enchereTitle}>Enchères Gagnées</h2>
+    <div className={style.enchereContainer}>
+      <div className={style.enchereColumn}>
+        <h2 className={style.enchereTitle}>Enchères Gagnées</h2>
         <div>
           {auctionsWon.map((article, index) => (
-            <div key={index} className={styles.enchereArticle}>
-              <p className={styles.enchereArticleName}>{article.name}</p>
-              <p className={styles.enchereArticleStatus}>Acheté</p>
+            <div key={index} className={style.enchereArticle}>
+              <p className={style.enchereArticleName}>{article.name}</p>
+              <p className={style.enchereArticleStatus}>Acheté</p>
             </div>
           ))}
         </div>
       </div>
 
-      <div className={styles.enchereColumn}>
-        <h2 className={styles.enchereTitle}>Enchères Perdues</h2>
+      <div className={style.enchereColumn}>
+        <h2 className={style.enchereTitle}>Enchères Perdues</h2>
         <div>
           {auctionsLost.map((article, index) => (
-            <div key={index} className={styles.enchereArticle}>
-              <p className={styles.enchereArticleName}>{article.name}</p>
-              <p className={styles.enchereArticleStatus}>Non Acheté</p>
+            <div key={index} className={style.enchereArticle}>
+              <p className={style.enchereArticleName}>{article.name}</p>
+              <p className={style.enchereArticleStatus}>Non Acheté</p>
             </div>
           ))}
         </div>
